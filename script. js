@@ -1,0 +1,22 @@
+const form = document.getElementById("registrationForm");
+const result = document.getElementById("result");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const eventName = document.getElementById("event").value;
+
+    result.style.display = "block";
+    result.innerHTML = `
+        <h3>Registration Successful!</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Event:</strong> ${eventName}</p>
+    `;
+
+    form.reset();
+});
